@@ -1,21 +1,21 @@
-🌉 hetu-bridges
+# 🌉 hetu-bridges
 
 A collection of bridges for cross-chain channels of different types of messages.
 
 Hetu Bridge is a decentralized cross-chain bridge designed to enable seamless asset transfers between Ethereum and other leading blockchain ecosystems. Leveraging innovative cross-chain technology and Causality-Based Hyperscale Finality, Hetu Cross-Chain Bridge offers an efficient, secure, and scalable solution for cross-chain interoperability.
-🚀 Core Features
+## 🚀 Core Features
 
-    🌐 Cross-Chain Asset Transfers: Facilitates token transfers between Ethereum and other popular blockchains such as Cosmos, Polkadot, and Solana.
+- 🌐 Cross-Chain Asset Transfers: Facilitates token transfers between Ethereum and other popular blockchains such as Cosmos, Polkadot, and Solana.
 
-    🔗 ERC-7683 Compatibility: Supports the ERC-7683 standard, providing enhanced flexibility and scalability for cross-chain transactions.
+- 🔗 ERC-7683 Compatibility: Supports the ERC-7683 standard, providing enhanced flexibility and scalability for cross-chain transactions.
 
-    💸 Efficiency and Low Cost: Optimized protocol design reduces transaction costs and processing times.
+- 💸 Efficiency and Low Cost: Optimized protocol design reduces transaction costs and processing times.
 
-    🔒 Decentralization and Security: Maintained by a network of validators, ensuring decentralization and robust security.
+- 🔒 Decentralization and Security: Maintained by a network of validators, ensuring decentralization and robust security.
 
-    🤖 AI-Powered Use Cases: Provides infrastructure support for decentralized AI (DeAI) and decentralized science (DeSci) applications.
+- 🤖 AI-Powered Use Cases: Provides infrastructure support for decentralized AI (DeAI) and decentralized science (DeSci) applications.
 
-🛠️ Cross-Chain Technology Overview
+## 🛠️ Cross-Chain Technology Overview
 
 Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatibility to deliver a robust cross-chain solution. Below is an overview of the core technical components and processes:
 1. 🌐 Cross-Chain Communication Protocol
@@ -44,7 +44,7 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
 
     Verifiable Logical Clocks: Utilizes TEE to implement verifiable logical clocks, ensuring transparent and secure timestamping.
 
-🔄 Technical Workflow
+## 🔄 Technical Workflow
 Step-by-Step Process:
 
     🚀 User Initiates Cross-Chain Transaction:
@@ -77,7 +77,7 @@ Step-by-Step Process:
 
         The user receives the cross-chain assets on the target chain, completing the cross-chain process.
 
-🛠️ How to Use
+## 🛠️ How to Use
 Step-by-Step Guide:
 
     🔗 Connect Wallet:
