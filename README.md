@@ -44,38 +44,55 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
 
     Verifiable Logical Clocks: Utilizes TEE to implement verifiable logical clocks, ensuring transparent and secure timestamping.
 
-## 🔄 Technical Workflow
-Step-by-Step Process:
+5. ⏱️ Time Stamp:
 
-    🚀 User Initiates Cross-Chain Transaction:
+    **Smart Contract Layer (Ethereum Side)**
 
-        A user initiates a cross-chain transaction on the source chain (e.g., Ethereum), specifying the target chain and recipient address.
+    In Ethereum smart contracts, each block has a built-in timestamp `block.timestamp`, which can be directly referenced by the `Gravity.sol` contract to record the occurrence time of events.
 
-    📡 Relayers Monitor and Relay Data:
+    ```solidity
+    event TransactionExecuted(address indexed sender, uint256 amount, uint256 timestamp);
 
-        Relayers monitor cross-chain events on the source chain and relay transaction data to the target chain.
+    function executeTransaction(address sender, uint256 amount) external {
+           emit TransactionExecuted(sender, amount, block.timestamp);
+    }
+    
+    **Effect:**
 
-    🔒 Asset Locking:
+- Ensure to record the time of cross chain transactions on the Ethereum chain.
 
-        Assets are locked on the source chain to ensure the security of the cross-chain transaction.
+- Convenient to use this timestamp during Cosmos chain replay verification.
 
-    🔍 Merkle Proof Verification:
+    **hetu-bridge**
 
-        The target chain verifies the transaction's validity using Merkle Proofs, ensuring data authenticity and integrity.
+    In Hetu bridge, when modules handle cross chain messages, they can obtain timestamps through the transaction context ctx.
 
-    ⏱️ Causal Ordering and Finality:
+```go
+// Import the necessary Cosmos SDK libraries
+import (
+    sdk "github.com/cosmos/cosmos-sdk/types"
+)
 
-        Hetu Cross-Chain Bridge employs causality-based technology to order transactions, ensuring logical consistency.
+func handleMessage(ctx sdk.Context, msg types.MsgSendToEthereum) error {
+    timestamp := ctx.BlockTime()
+    fmt.Printf("Received message at timestamp: %s\n", timestamp)
+    // Process message logic
+    return nil
+}
 
-        Hyperscale Finality enables rapid transaction confirmation and high throughput.
+**Effect:**
 
-    🪙 Asset Minting:
+- Record the processing time of each cross chain request for logging and debugging purposes.
 
-        Corresponding assets are minted on the target chain and sent to the user's specified recipient address.
+- During the verification process, the timestamp is compared with the Ethereum side to ensure the validity of the data synchronization sequence.
 
-    🎉 User Receives Assets:
+**Summary**
 
-        The user receives the cross-chain assets on the target chain, completing the cross-chain process.
+- Ethereum uses block.timestamp, Cosmos uses ctx BlockTime() uniformly records time.
+
+- Ensure that the relay node records the timestamp in the transaction data for replay verification on the target chain.
+
+- Avoid relying directly on timestamps for transaction sorting, and can be verified with block height.
 
 ## 🛠️ How to Use
 Step-by-Step Guide:
