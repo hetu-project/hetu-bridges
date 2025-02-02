@@ -50,12 +50,6 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
 
     In Ethereum smart contracts, each block has a built-in timestamp `block.timestamp`, which can be directly referenced by the `Gravity.sol` contract to record the occurrence time of events.
 
-    ```solidity
-    event TransactionExecuted(address indexed sender, uint256 amount, uint256 timestamp);
-
-    function executeTransaction(address sender, uint256 amount) external {
-           emit TransactionExecuted(sender, amount, block.timestamp);
-    }
 
 **Effect:**
 
@@ -66,18 +60,6 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
     **hetu-bridge**
 
     In Hetu bridge, when modules handle cross chain messages, they can obtain timestamps through the transaction context ctx.
-
-    ```go
-    // Import the necessary Cosmos SDK libraries
-    import (
-        sdk "github.com/cosmos/cosmos-sdk/types"
-    )
-    func handleMessage(ctx sdk.Context, msg types.MsgSendToEthereum) error {
-        timestamp := ctx.BlockTime()
-        fmt.Printf("Received message at timestamp: %s\n", timestamp)
-        // Process message logic
-        return nil
-    }
 
 **Effect:**
 
