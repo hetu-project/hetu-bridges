@@ -96,30 +96,22 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
 ## 🛠️ How to Use
 Step-by-Step Guide:
 
-    🔗 Connect Wallet:
+- 🔗 Connect Wallet:
 
-        Connect your Ethereum or other compatible blockchain wallet.
+    Connect your Ethereum or other compatible blockchain wallet.
 
-    🪙 Select Token:
+- 🪙 Select Token:
 
-        Choose the token you wish to transfer and the target chain.
+    Choose the token you wish to transfer and the target chain.
 
-    🚀 Initiate Transaction:
+- 🚀 Initiate Transaction:
 
-        Enter the recipient address and amount, then initiate the cross-chain transfer.
+    Enter the recipient address and amount, then initiate the cross-chain transfer.
 
-    ✅ Confirm Transaction:
+- ✅ Confirm Transaction:
 
-        Confirm the transaction in your wallet and wait for the cross-chain bridge to process it.
+    Confirm the transaction in your wallet and wait for the cross-chain bridge to process it.
 
-    🎉 Completion:
+- 🎉 Completion:
 
-        Once the transaction is complete, the tokens will appear on the target chain.
-
-📚 Additional Resources
-
-    Hetu Bridge Documentation
-
-    ERC-7683 Standard
-
-    Cross-Chain Interoperability Guide
+    Once the transaction is complete, the tokens will appear on the target chain.
