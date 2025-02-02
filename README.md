@@ -56,8 +56,8 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
     function executeTransaction(address sender, uint256 amount) external {
            emit TransactionExecuted(sender, amount, block.timestamp);
     }
-    
-    **Effect:**
+
+**Effect:**
 
 - Ensure to record the time of cross chain transactions on the Ethereum chain.
 
@@ -67,18 +67,17 @@ Hetu Bridge integrates Causality-Based Hyperscale Finality and ERC-7683 compatib
 
     In Hetu bridge, when modules handle cross chain messages, they can obtain timestamps through the transaction context ctx.
 
-```go
-// Import the necessary Cosmos SDK libraries
-import (
-    sdk "github.com/cosmos/cosmos-sdk/types"
-)
-
-func handleMessage(ctx sdk.Context, msg types.MsgSendToEthereum) error {
-    timestamp := ctx.BlockTime()
-    fmt.Printf("Received message at timestamp: %s\n", timestamp)
-    // Process message logic
-    return nil
-}
+    ```go
+    // Import the necessary Cosmos SDK libraries
+    import (
+        sdk "github.com/cosmos/cosmos-sdk/types"
+    )
+    func handleMessage(ctx sdk.Context, msg types.MsgSendToEthereum) error {
+        timestamp := ctx.BlockTime()
+        fmt.Printf("Received message at timestamp: %s\n", timestamp)
+        // Process message logic
+        return nil
+    }
 
 **Effect:**
 
