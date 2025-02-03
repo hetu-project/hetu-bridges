@@ -1,5 +1,4 @@
-[流程图](./mermaid.png)
-
+![流程图](./mermaid.png "Hetu Bridge Flowchart")
 ## 流程图的主要部分：
     
 - Gravity Bridge Overview：概述 Gravity 桥的功能。
