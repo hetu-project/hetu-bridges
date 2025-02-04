@@ -307,3 +307,6 @@ type ResolvedCrossChainOrder struct {
 - 在 Gravity-Bridge 中的集成：
   - 当 Gravity.sol 收到 ERC-20 代币后，锁定代币并触发 Open 事件。
   - 事件中会包含跨链转移的基本信息（如 ERC-20 代币类型和数量）
+
+**`思维导图`**
+![思维导图](./hetu-bridge.jpg "Hetu Bridge")
