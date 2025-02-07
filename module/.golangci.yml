@@ -1,0 +1,73 @@
+linters:
+  enable:
+      - bodyclose
+      - dogsled
+      - dupl
+      - goconst
+      - gocritic
+      - gocyclo
+      - gofmt
+      - gosimple
+      - govet
+      - ineffassign
+      - staticcheck
+      - unused
+      - exhaustruct
+      - errcheck
+
+linters-settings:
+  govet:
+    check-shadowing: false
+    field-alignment: true
+  errcheck:
+    # report about assignment of errors to blank identifier: `num, _ := strconv.Atoi(numStr)`;
+    # default is false: such cases aren't reported by default.
+    check-blank: true
+  exhaustruct:
+    # Struct Patterns is a list of expressions to match struct packages and names
+    # The struct packages have the form example.com/package.ExampleStruct
+    # The matching patterns can use matching syntax from https://pkg.go.dev/path#Match
+    # If this list is empty, all structs are tested.
+    struct-patterns:
+
+issues:
+  exclude-rules:
+    - path: app/upgrades
+      linters:
+        - errcheck
+        - staticcheck
+    - path: gravity/migrations
+      linters:
+        - errcheck
+        - staticcheck
+    - path: x/gravity/abci.go
+      linters:
+        - dupl
+    - path: config/
+      linters:
+        - exhaustruct
+    - path: contrib/
+      linters:
+        - exhaustruct
+        - errcheck
+    - path: proto/
+      linters:
+        - exhaustruct
+        - errcheck
+    - path: third_party/
+      linters:
+        - exhaustruct
+        - errcheck
+
+  golint:
+    # minimal confidence for issues, default is 0.8
+    min-confidence: 0
+  prealloc:
+    # XXX: we don't recommend using this linter before doing performance profiling.
+    # For most programs usage of prealloc will be a premature optimization.
+
+    # Report preallocation suggestions only on simple loops that have no returns/breaks/continues/gotos in them.
+    # True by default.
+    simple: false
+    range-loops: true # Report preallocation suggestions on range loops, true by default
+    for-loops: true # Report preallocation suggestions on for loops, false by default
