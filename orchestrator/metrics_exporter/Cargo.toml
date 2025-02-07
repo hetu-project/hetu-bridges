@@ -1,0 +1,17 @@
+[package]
+name = "metrics_exporter"
+version = "0.1.1"
+edition = "2021"
+authors = ["Max Nikolaev <maxn@amhost.net>"]
+
+[lib]
+name = "metrics_exporter"
+path = "src/metrics_exporter.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+gravity_utils = {path = "../gravity_utils"}
+
+prometheus_exporter = {git="https://github.com/jkilpatr/prometheus_exporter", rev="a58589794c9e592592c2d2f109b55d57edb980ee"}
+lazy_static = "1.4"

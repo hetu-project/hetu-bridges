@@ -1,0 +1,14 @@
+[workspace]
+members = ["orchestrator", "cosmos_gravity", "ethereum_gravity", "gravity_utils", "test_runner", "relayer", "gbt", "metrics_exporter", "jsonrpc_server"]
+default-members = ["gbt"]
+resolver = "2"
+
+[workspace.dependencies]
+gravity_proto = "0.6.0"
+num256 = "0.6"
+clarity = "1.5"
+web30 = "1.6"
+deep_space = "2.27.2"
+prost = "0.13"
+prost-types = "0.13"
+tonic = "0.12"
